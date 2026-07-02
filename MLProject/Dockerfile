@@ -8,7 +8,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 # Copy requirements and install
-COPY MLProject/conda.yaml .
+COPY conda.yaml .
 RUN pip install --no-cache-dir \
     scikit-learn==1.5.2 \
     pandas==2.2.3 \
@@ -18,7 +18,8 @@ RUN pip install --no-cache-dir \
     seaborn==0.13.2
 
 # Copy application code
-COPY MLProject/ .
+COPY . .
+
 
 # Expose MLflow serving port
 EXPOSE 5000

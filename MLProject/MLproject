@@ -1,7 +1,8 @@
-name: wine-quality-training
+name: product-positioning-training
 
 conda_env: conda.yaml
 
 entry_points:
   main:
     command: "python modelling.py"
+
